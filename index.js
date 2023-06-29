@@ -44,8 +44,9 @@ console.log(process.env.FIREBASE_DATABASE_URL)
         return ret
     }
     
-    app.get("/api/data", (req, res) => {    
+    app.get("/data", (req, res) => {    
         getRain().then(r => res.send(r))
 });
 
-app.listen(6001, () => console.log("Server is listening to port 6001"));
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => console.log("Server is listening to port " + PORT));
