@@ -44,7 +44,7 @@ console.log(process.env.FIREBASE_DATABASE_URL)
         return ret
     }
     
-    app.get("/data", (req, res) => {    
+    app.get("/api/data", (req, res) => {    
         getRain().then(r => res.send(r))
 });
 
